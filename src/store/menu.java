@@ -1,7 +1,9 @@
 package store;
 
 import java.util.Scanner;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +11,8 @@ import java.util.Properties;
 
 
 public class menu {
+	
+// the program use two different list one of the list for books an other for costumers	 
 	
 	static int number3 = 0;
 	static List<books> books_list = new ArrayList<books>();
@@ -21,12 +25,11 @@ public class menu {
 		@SuppressWarnings("resource")
 		Scanner respuesta1=new Scanner(System.in);
 		int respuesta = 0;
-		while (respuesta!=4) {
+		while (respuesta!=3) {
 			System.out.println("\tselect de option");
 			System.out.println(" -1- administrator");
-			System.out.println(" -2- user");
-			System.out.println(" -3- new user");
-			System.out.println(" -4- come back to the main menu");
+			System.out.println(" -2- new user");
+			System.out.println(" -3- come back to the main menu");
 
 			respuesta = respuesta1.nextInt();
 			
@@ -34,7 +37,9 @@ public class menu {
 			
 			case 1: 
 				
-	//-----------------------------------------------------------------------------		
+//-----------------------------------------------------------------------------------------------------------------------------------------
+	   // we only have access if we have an other different username an other password
+	   // the program recognize two different usernames and two different passwords
 				
 				String na = "";
 				String pass = "";
@@ -61,7 +66,8 @@ public class menu {
 				
 				Scanner df = new Scanner(System.in);
 				Scanner dt = new Scanner(System.in);
-				String user_ = "",password_ = "";
+				String user_ = "";
+				String password_ = "";
 				
 				System.out.println("Introduce user name :");
 				user_ = df.nextLine();
@@ -70,8 +76,7 @@ public class menu {
 				
 				
 	
-				
-	//----------------------------------------------------------------------------------			
+						
 				
 				if(user_.equals(na) && password_.equals(pass)) {
 
@@ -83,51 +88,38 @@ public class menu {
 					System.out.println(" -1- show all costumers");
 					System.out.println(" -2- come back");
 					respuesta4 = respuesta5.nextInt();
-				
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+					
 				
 			switch(respuesta4)	{
 			case 1:
+				// the program save the names and passwords, these names and passwords only can checking by the administrator 
 				for (int i = 0; i <= costumer_list.size()-1; i++) {
 					System.out.println("NAME: " + costumer_list.get(i).getName() + ", USER NAME: " + costumer_list.get(i).getUser_name() + ", EMAIL: "+ costumer_list.get(i).getEmail() );
 					System.out.println(" ");
 		        }
 				break;
 			case 2:
-				
-				
-				
-				
-				
-				
-				
-				
-				
 				break;
 			}
 			
 				}
 		}
 				else{
-					
+					System.out.println("------------------------------------");
 					System.out.println("Sorry you dont have acces");
+					System.out.println("------------------------------------");
+
+					System.out.println("");
 					break;
 				}
 				break;
              	
 				
-			case 2:
-				Scanner scn1 = new Scanner(System.in);
-				String name1=" ";
-				System.out.println("introduce you user name");
-				name1=scn1.nextLine();
-				String password1=" ";
-				System.out.println("introduce your password");
-				password1=scn1.nextLine();
 				
-			
-				break;
+		
 				
-			case 3: 
+			case 2: 
 				
 				
 				
@@ -148,22 +140,64 @@ public class menu {
 				System.out.println("introduce your email");
 				email=scn.nextLine();
 				
+			// the program add the dates in a list 	
+				
 				costumer_list.add(new costumer(name, user_name, email));
+		
 				
 				
-				
-				break;
-				
-				
-				
-			case 4:
+		//-----------------------------------------------------------------------------------------------------------------------------		
+		// we create a file which save the user list in the desktop.	
 				
 				
-				break;
+			String j = "\r\n";
+			String s = "";
+			String a = "";
+			
 
-			
-			
+			try {
 				
+		//we define the place of the file in our pc
+				
+				File f = new File("C:\\Users\\alvar\\Desktop/users.txt");
+				
+				
+				if(f.exists()) {
+					
+					f.delete();
+					f.createNewFile();
+					
+				}
+	
+				FileWriter f2 = new FileWriter(f, true);
+
+				for(int i = 0;i<costumer_list.size();i++) {
+					
+					
+
+					f2.write("name :" + costumer_list.get(i).getName() + " || user name :" + costumer_list.get(i).getUser_name()+" || email :" + costumer_list.get(i).getEmail() );
+					f2.write(s);
+					f2.write(j);
+					f2.write(a);
+				
+
+				}
+				f2.close();
+
+			} catch (IOException e) {
+			
+				e.printStackTrace();
+			}
+		 		
+        //---------------------------------------------------------------------------------------------------------------------------------------------------
+				break;
+				
+				
+				
+			case 3:
+
+				break;
+	
 			}
 			
 			
@@ -191,6 +225,11 @@ public class menu {
 		
 		switch (respuesta) {
 			
+		
+		
+		// the program show the different categories that we have in the list.
+		
+		
 		case 1:
 			
 				String cat = "-Horror-";
@@ -203,8 +242,8 @@ public class menu {
 				System.out.println("---------------------");
 				System.out.println("Book Number : "+ t);
 				System.out.println("Book name : "+books_list.get(i).book_name);
-				System.out.print("Writer : "+ books_list.get(i).writer);
-				System.out.print("Price : "+ books_list.get(i).price);
+				System.out.print(" Writer : "+ books_list.get(i).writer);
+				System.out.print(" Price : "+ books_list.get(i).price);
 				System.out.print(" Units : "+ books_list.get(i).units);
 				System.out.println("");			
 			}	
@@ -222,8 +261,8 @@ public class menu {
 				System.out.println("---------------------");
 				System.out.println("Book Number : "+ t);
 				System.out.println("Book name : "+books_list.get(i).book_name);
-				System.out.print("Writer : "+ books_list.get(i).writer);
-				System.out.print("Price : "+ books_list.get(i).price);
+				System.out.print(" Writer : "+ books_list.get(i).writer);
+				System.out.print(" Price : "+ books_list.get(i).price);
 				System.out.print(" Units : "+ books_list.get(i).units);
 				System.out.println("");
 		
@@ -243,8 +282,8 @@ public class menu {
 				System.out.println("---------------------");
 				System.out.println(" Book Number : "+ t);
 				System.out.println("Book name : "+books_list.get(i).book_name);
-				System.out.print("Writer : "+ books_list.get(i).writer);
-				System.out.print("Price : "+ books_list.get(i).price);
+				System.out.print(" Writer : "+ books_list.get(i).writer);
+				System.out.print(" Price : "+ books_list.get(i).price);
 				System.out.print(" Units : "+ books_list.get(i).units);
 				System.out.println("");		
 			}		
@@ -263,8 +302,8 @@ public class menu {
 				System.out.println("---------------------");
 				System.out.println("Book Number : "+ t);
 				System.out.println("Book name : "+books_list.get(i).book_name);
-				System.out.print("Writer : "+ books_list.get(i).writer);
-				System.out.print("Price : "+ books_list.get(i).price);
+				System.out.print(" Writer : "+ books_list.get(i).writer);
+				System.out.print(" Price : "+ books_list.get(i).price);
 				System.out.print(" Units : "+ books_list.get(i).units);
 				System.out.println("");		
 			}	
@@ -275,8 +314,11 @@ public class menu {
 			
 			 System.out.println(" ");
 			System.out.println("-----------------------------------");
+			
+	     // the program show all books in the list.
+			
 	        for (int i = 0; i <= books_list.size()-1; i++) {
-	            System.out.println("Categorie book: " + books_list.get(i).categorie + "BOOK NAME: " + books_list.get(i).book_name + " WRITER: "+ books_list.get(i).writer + " " + "PRICE: " + books_list.get(i).price + " BOOK UNITS: " + books_list.get(i).units);
+	            System.out.println("-Categorie book: " + books_list.get(i).categorie + " -BOOK NAME: " + books_list.get(i).book_name + " -WRITER: "+ books_list.get(i).writer + " " + " -PRICE: " + books_list.get(i).price + " -BOOK UNITS: " + books_list.get(i).units);
 	            
 	        }
 	        System.out.println("-----------------------------------");
@@ -311,6 +353,8 @@ public class menu {
 			
 			case 1:
 				
+		// the program search the book that we want and save that. to show it in other option
+				
 				Scanner number1= new Scanner(System.in);
 				int number = 0;
 				System.out.println("introduce the number of the book");
@@ -326,7 +370,7 @@ public class menu {
 					if(number3 > books_list.get(number).units) {
 						
 						System.out.println("There are only : "+ books_list.get(number).units+ " units.");
-						
+						System.out.println("");
 						
 					}else {
 						
@@ -407,21 +451,20 @@ public class menu {
 				System.out.println("Products : ");
 				
 				System.out.println("-----------------------------------");
+				
+				//the program show all book that we have bought
+				
 		        for (int i = 0; i <= books_list.size()-1; i++) {
 		        	
 		        	if(books_list.get(i).getCompra()) {
 		        	
-		        	System.out.println("Units : " + books_list.get(i).getUnits());
+		        	
 		            System.out.println("Categorie book: " + books_list.get(i).categorie + "BOOK NAME: " + books_list.get(i).book_name + " WRITER: "+ books_list.get(i).writer + " " + "PRICE: " + books_list.get(i).price + " BOOK UNITS: " + books_list.get(i).units);
 		            System.out.println("-----------------------------------");
 		        	}
+		        	
 		        }
-		        System.out.println("-----------------------------------");
-				
-				
-				
-				
-				
+
 				break;
 			case 4:
 				break;
@@ -432,6 +475,9 @@ public class menu {
 
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws IOException {
+		
+		
+		// all books that we have in the list
 		
 		books_list.add(new books("-Horror-", "las Almas", "Pepe Villuela", 20.00 , 6, true, false));
 		books_list.add(new books("-Horror-", "el Bosque oscuro", "Andres de la Huerta", 19.99 , 12, true, false));
@@ -458,12 +504,57 @@ public class menu {
 		books_list.add(new books("-action-", "la Carretera", "Velax Turbo", 40.50 , 20, true, false));
 		
 		
+		System.out.println("\twelcome to the velax's store ");
+		System.out.println("");
+
+	//------------------------------------------------------------------------------------------------------------------------------------
+	// we only have access if we have the true username and the true password
+		
+		
+		
+		String na1 = "";
+		String pass1 = "";
+		
+		try(FileReader reader =  new FileReader("config")) {
+			
+	        Properties properties = new Properties();
+	        properties.load(reader);
+	        
+	       
+	       
+	       String username = properties.getProperty("user_name1");
+	       String password = properties.getProperty("password1");
+	   
+	        
+	        na1 = username;
+	        pass1 = password;
+
+	       }catch (Exception e) {
+	       
+	       e.printStackTrace();
+	       
+	       }
+		
+		Scanner df1 = new Scanner(System.in);
+		Scanner dt1 = new Scanner(System.in);
+		String user1_ = "",password1_ = "";
+		
+		System.out.println("Introduce your user name :");
+		user1_ = df1.nextLine();
+		System.out.println("Introduce your password:");
+		password1_ = df1.nextLine();
+		
+
+		if(user1_.equals(na1) && password1_.equals(pass1)) {
+    
+	//------------------------------------------------------------------------------------------------------------------------------------
+
 			Scanner respuesta1=new Scanner(System.in);
 			int respuesta = 0;
 			
 			try {
 			while(respuesta!=4) {
-			System.out.println("\twelcome to velaxs shop select one option");
+			System.out.println("\twelcome to the main menu: select one option :)");
 			
 					System.out.println(" -1- sing in");
 					System.out.println(" -2- search a book");
@@ -503,9 +594,24 @@ public class menu {
 
 			}
 		}
+
+		
+		
+		
+		else {
+			System.out.println("------------------------------------");
+			System.out.println("Sorry you dont have acces");
+			System.out.println("------------------------------------");
+			System.out.println("");
+			
+
+		}
+		
+		
+		
+	}
+		
 	
-		
-		
 	}
 	
 	
