@@ -1,8 +1,8 @@
 # store
 
 
-For this practice, we have made the management of an online store menu. For this we have used a master class (menu) and two secondary (costumer and books).
-In the main class, we found the body of the program which implemented it with a switch which we call various functions.
+For this practice, we have made the management of an online store menu. For this program, we have used a master class (menu) and two secondary (costumer and books).
+In the main class, we found the body of the program which implemented it with a switch which it call's various functions.
  Functions:
  ´´´
  		try {
