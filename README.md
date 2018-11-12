@@ -49,7 +49,9 @@ In the main class, we found the body of the program which implemented it with a 
  ´´´
  
 1.	Sing_in, this first option register new users and administrator can view the list of users.
+
 2.	Search seek all kinds of books, or by gender either visualizing the entire list. 
+
 3.	Buy_books this option the user can buy books, perform currency exchange option and display the list of purchase.   
 
 To save both users as the books have employed lists which we call to show items. 
