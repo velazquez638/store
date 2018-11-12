@@ -55,7 +55,7 @@ In the main class, we found the body of the program which implemented it with a 
 
 3.	Buy_books this option the user can buy books, perform currency exchange option and display the list of purchase.   
 
-To save both users as the books have employed lists which we call to show items. 
+To save both, users and books we have employed lists which we call to show items. 
 Another feature to be highlighted in the program is the use of files, our program creates a text file with the name, user name and email of all new registered users on the desktop.
 ´´´
 		
