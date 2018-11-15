@@ -49,7 +49,7 @@ In the main class, we found the body of the program which implemented it with a 
 			}
  ´´´
  
- ![alt text](https://github.com/velazquez638/store/blob/master/pictures/1.PNG)
+ ![](pictures/1.PNG)
  
  
  
@@ -63,6 +63,14 @@ In the main class, we found the body of the program which implemented it with a 
 
 To save both, users and books we have employed lists which we call to show items. 
 Another feature to be highlighted in the program is the use of files, our program creates a text file with the name, user name and email of all new registered users on the desktop.
+
+![](pictures/3.PNG)
+
+
+![](pictures/4.PNG)
+
+
+
 ´´´
 		
 			String j = "\r\n";
