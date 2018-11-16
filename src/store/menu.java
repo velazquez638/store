@@ -15,6 +15,8 @@ public class menu {
 // the program use two different list one of the list for books an other for costumers	 
 	
 	static int number3 = 0;
+	
+	
 	static List<books> books_list = new ArrayList<books>();
 	static List<costumer> costumer_list = new ArrayList<costumer>();
 
@@ -38,8 +40,8 @@ public class menu {
 			case 1: 
 				
 //-----------------------------------------------------------------------------------------------------------------------------------------
-	   // we only have access if we have an other different username an other password
-	   // the program recognize two different usernames and two different passwords
+	   // we only have access if we have an other different user name an other password
+	   // the program recognize two different user names and two different passwords
 				
 				String na = "";
 				String pass = "";
@@ -94,6 +96,7 @@ public class menu {
 			switch(respuesta4)	{
 			case 1:
 				// the program save the names and passwords, these names and passwords only can checking by the administrator 
+				
 				for (int i = 0; i <= costumer_list.size()-1; i++) {
 					System.out.println("NAME: " + costumer_list.get(i).getName() + ", USER NAME: " + costumer_list.get(i).getUser_name() + ", EMAIL: "+ costumer_list.get(i).getEmail() );
 					System.out.println(" ");
@@ -146,7 +149,8 @@ public class menu {
 		
 				
 				
-		//-----------------------------------------------------------------------------------------------------------------------------		
+		//-----------------------------------------------------------------------------------------------------------------------------	
+				
 		// we create a file which save the user list in the desktop.	
 				
 				
@@ -473,6 +477,55 @@ public class menu {
 			}
 		}
 
+		
+		public static void survey(String[] args) {
+			
+			// we use a Singleton method
+			
+			sur a =sur.getconfigurador("", "", "");
+			Scanner respuesta2=new Scanner(System.in);
+			int respuesta = 0;
+			
+			while(respuesta!=4) {
+				System.out.println("");
+				System.out.println("");
+
+				System.out.println("\t welcome to de survey:");
+				System.out.println("-1- i´m disappointed");
+				System.out.println("-2- i think there are wrong thins");
+				System.out.println("-3- i´m satisfied");
+				System.out.println("-4- come back to the main menu");
+
+			System.out.println("select a option number");
+			respuesta = respuesta2.nextInt();
+		
+			
+			switch(respuesta) {
+			case 1:
+				System.out.println(a.getOne());
+                
+				break;
+				
+			case 2: 
+				
+				System.out.println(a.getFive());
+
+				 break;
+	
+			case 3: 
+				System.out.println(a.getTen());
+
+				break;
+			case 4:
+		break;
+			
+
+			}
+			
+		}
+		}
+		
+		
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws IOException {
 		
@@ -553,13 +606,18 @@ public class menu {
 			int respuesta = 0;
 			
 			try {
-			while(respuesta!=4) {
+			while(respuesta!=5) {
+				
+				System.out.println("");
+				System.out.println("");
+
 			System.out.println("\twelcome to the main menu: select one option :)");
 			
 					System.out.println(" -1- sing in");
 					System.out.println(" -2- search a book");
 					System.out.println(" -3- buy books"); 
-					System.out.println(" -4- sing out");
+					System.out.println(" -4- satisfation survey"); 
+					System.out.println(" -5- sing out");
 					
 					System.out.println("select a option number");
 					respuesta = respuesta1.nextInt();
@@ -581,7 +639,12 @@ public class menu {
 						
 						 j.buy_books();
 						break;
-					case 4: 
+					case 4:
+						
+						j.survey(args);
+						
+						break;
+					case 5: 
 						System.out.println("\tthanks come back soon");
 						break;
 
