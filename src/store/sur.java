@@ -1,5 +1,11 @@
 package store;
 
+
+
+//Design pattern Singleton
+
+
+
 public class sur {
 
 	private String one;

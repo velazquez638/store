@@ -1,5 +1,10 @@
 package store;
 
+import com.mitecode.inter.CuentaBancoAImpl;
+import com.mitecode.inter.Icuenta;
+import com.mitecode.model.cuenta;
+import com.mitecode.proxy.cuentaProxy;
+
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileReader;
@@ -490,14 +495,15 @@ public class menu {
 				System.out.println("");
 				System.out.println("");
 
-				System.out.println("\t welcome to de survey:");
+				System.out.println("--------------- welcome to de survey:-----------------------");
+				System.out.println("");
+				System.out.println("select a option number");
 				System.out.println("-1- i´m disappointed");
 				System.out.println("-2- i think there are wrong thins");
 				System.out.println("-3- i´m satisfied");
 				System.out.println("-4- come back to the main menu");
 
-			System.out.println("select a option number");
-			respuesta = respuesta2.nextInt();
+			    respuesta = respuesta2.nextInt();
 		
 			
 			switch(respuesta) {
@@ -517,6 +523,7 @@ public class menu {
 
 				break;
 			case 4:
+				
 		break;
 			
 
@@ -525,6 +532,17 @@ public class menu {
 		}
 		}
 		
+		public static void saldo(String[] args) {
+			
+			cuenta c = new cuenta (1, "mitocode", 100);
+			
+			Icuenta cuentaProxy = new cuentaProxy(new CuentaBancoAImpl());
+		    cuentaProxy.mostrarSaldo(c);
+			c=cuentaProxy.depositarDinero(c,500);
+			c=cuentaProxy.retirarDinero(c,20);
+			cuentaProxy.mostrarSaldo(c);
+
+		}
 		
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws IOException {
@@ -561,7 +579,7 @@ public class menu {
 		System.out.println("");
 
 	//------------------------------------------------------------------------------------------------------------------------------------
-	// we only have access if we have the true username and the true password
+	// we only have access if we have the true user name and the true password
 		
 		
 		
@@ -606,7 +624,7 @@ public class menu {
 			int respuesta = 0;
 			
 			try {
-			while(respuesta!=5) {
+			while(respuesta!=6) {
 				
 				System.out.println("");
 				System.out.println("");
@@ -617,7 +635,8 @@ public class menu {
 					System.out.println(" -2- search a book");
 					System.out.println(" -3- buy books"); 
 					System.out.println(" -4- satisfation survey"); 
-					System.out.println(" -5- sing out");
+					System.out.println(" -5- cout dates"); 
+					System.out.println(" -6- sing out");
 					
 					System.out.println("select a option number");
 					respuesta = respuesta1.nextInt();
@@ -644,7 +663,12 @@ public class menu {
 						j.survey(args);
 						
 						break;
-					case 5: 
+					case 5:
+						
+						j.saldo(args);
+						
+						break;
+					case 6: 
 						System.out.println("\tthanks come back soon");
 						break;
 
