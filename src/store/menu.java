@@ -534,7 +534,7 @@ public class menu {
 		
 		public static void saldo(String[] args) {
 			
-			cuenta c = new cuenta (1, "mitocode", 100);
+			cuenta c = new cuenta (1020345, "sergio", 1000);
 			
 			Icuenta cuentaProxy = new cuentaProxy(new CuentaBancoAImpl());
 		    cuentaProxy.mostrarSaldo(c);

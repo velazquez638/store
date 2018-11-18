@@ -22,7 +22,7 @@ public class cuentaProxy implements Icuenta {
 
 	@Override
 	public cuenta retirarDinero(cuenta cuenta, double monto) {
-		LOGGER.info("------CUENTA PROXY--------RETIRAR DINERO-----------");
+		LOGGER.info("------CUENTA PROXY-------USER: sergio------RETIRAR DINERO-----------");
 		if (cuentaReal==null) {
 			cuentaReal = new CuentaBancoAImpl();
 			return cuentaReal.retirarDinero(cuenta, monto);
@@ -36,7 +36,7 @@ public class cuentaProxy implements Icuenta {
 
 	@Override
 	public cuenta depositarDinero(cuenta cuenta, double monto) {
-		LOGGER.info("------CUENTA PROXY--------DEPOSITAR DINERO-----------");
+		LOGGER.info("------CUENTA PROXY-------USER: sergio------DEPOSITAR DINERO-----------");
 		if (cuentaReal==null) {
 			cuentaReal = new CuentaBancoAImpl();
 			return cuentaReal.depositarDinero(cuenta, monto);
@@ -49,7 +49,7 @@ public class cuentaProxy implements Icuenta {
 
 	@Override
 	public void mostrarSaldo(cuenta cuenta) {
-		LOGGER.info("------CUENTA PROXY--------MOSTRAR DINERO-----------");
+		LOGGER.info("------CUENTA PROXY-------USER: sergio------MOSTRAR DINERO-----------");
 		if (cuentaReal==null) {
 			cuentaReal = new CuentaBancoAImpl();
 			cuentaReal.mostrarSaldo(cuenta);

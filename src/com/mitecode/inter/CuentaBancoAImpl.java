@@ -16,7 +16,7 @@ public class CuentaBancoAImpl implements Icuenta {
 	public cuenta depositarDinero(cuenta cuenta, double monto) {
 		double saldoActual = cuenta.getSaldoInicial() + monto + 0.20;
 		cuenta.setSaldoInicial(saldoActual);
-		System.out.println("Saldo actual: " + cuenta.getSaldoInicial());
+		System.out.println("Saldo actual despues del deposito: " + cuenta.getSaldoInicial());
 		return cuenta;
 	}
 
