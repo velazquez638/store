@@ -72,7 +72,7 @@ public class menu {
 			       }
 				
 				Scanner df = new Scanner(System.in);
-				Scanner dt = new Scanner(System.in);
+				@SuppressWarnings("unused") Scanner dt = new Scanner(System.in);
 				String user_ = "";
 				String password_ = "";
 				
@@ -87,6 +87,7 @@ public class menu {
 				
 				if(user_.equals(na) && password_.equals(pass)) {
 
+				@SuppressWarnings("resource")
 				Scanner respuesta5=new Scanner(System.in);
 				int respuesta4 = 0;
 				
@@ -140,7 +141,7 @@ public class menu {
 				System.out.println("introduce you user name");
 				user_name=scn.nextLine();
 
-				String password =" ";
+				@SuppressWarnings("unused") String password =" ";
 				System.out.println("introduce your password");
 				password=scn.nextLine();
 
@@ -220,6 +221,7 @@ public class menu {
 	
 	
 
+		@SuppressWarnings("resource")
 		Scanner respuesta1=new Scanner(System.in);
 		int respuesta = 0;
 		while (respuesta!=6) {
@@ -343,6 +345,7 @@ public class menu {
 	
 		public static void buy_books() {
 			
+			@SuppressWarnings("resource")
 			Scanner respuesta1=new Scanner(System.in);
 			int respuesta = 0;
 			
@@ -371,6 +374,7 @@ public class menu {
 				
 				if (books_list.get(number).stock) {
 					
+					@SuppressWarnings("resource")
 					Scanner number2=new Scanner(System.in);
 					
 					System.out.println("how many books do you want?");
@@ -410,8 +414,8 @@ public class menu {
 				
 			case 2:
 				
-		 		Scanner respuesta2=new Scanner(System.in);
-		 		int respuesta3=0;
+		 		@SuppressWarnings("unused") Scanner respuesta2=new Scanner(System.in);
+		 		@SuppressWarnings("unused") int respuesta3=0;
 		 		Scanner price1=new Scanner(System.in);
 	            double price = 0;
 			    System.out.println("introduce the price");
@@ -488,6 +492,7 @@ public class menu {
 			// we use a Singleton method
 			
 			sur a =sur.getconfigurador("", "", "");
+			@SuppressWarnings("resource")
 			Scanner respuesta2=new Scanner(System.in);
 			int respuesta = 0;
 			
@@ -502,6 +507,8 @@ public class menu {
 				System.out.println("-2- i think there are wrong thins");
 				System.out.println("-3- i´m satisfied");
 				System.out.println("-4- come back to the main menu");
+				System.out.println("-----------------------------------------------------------");
+
 
 			    respuesta = respuesta2.nextInt();
 		
@@ -534,7 +541,7 @@ public class menu {
 		
 		public static void saldo(String[] args) {
 			
-			cuenta c = new cuenta (1020345, "sergio", 1000);
+			cuenta c = new cuenta (1020345, "user_name1", 1000);
 			
 			Icuenta cuentaProxy = new cuentaProxy(new CuentaBancoAImpl());
 		    cuentaProxy.mostrarSaldo(c);
@@ -544,8 +551,12 @@ public class menu {
 
 		}
 		
+		
+		
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws IOException {
+		
+		
 		
 		
 		// all books that we have in the list
@@ -556,17 +567,20 @@ public class menu {
 		books_list.add(new books("-Horror-", "el Camino", "Ana Claus", 10.00 , 3, true, false));
 		books_list.add(new books("-Horror-", "la Carretera", "Marian Dos", 30.50 , 60, true, false));
 		
+		
 		books_list.add(new books("-thriller-", "las luces", "Mario Gaus", 26.00 , 9, true, false));
 		books_list.add(new books("-thriller-", "el dia mas oscuro", "Macian Perez", 12.99 , 100, true, false));
 		books_list.add(new books("-thriller-", "las niñas del patio", "Paco Sanz", 5.45 , 4, true, false));
 		books_list.add(new books("-thriller-", "el señor de la puerta", "Roberto Alamo", 15.00 , 35, true, false));
 		books_list.add(new books("-thriller-", "la señal", "Luis el Pillo", 35.50 , 0, true, false));
 		
+		
 		books_list.add(new books("-comedi-", "la familia", "Perez Saul", 22.00 , 8, true, false));
 		books_list.add(new books("-comedi-", "el partido", "Felix ", 19.99 , 12, true, false));
 		books_list.add(new books("-comedi-", "Rey", "Pepita", 19.45 , 24, true, false));
 		books_list.add(new books("-comedi-", "el sendero", "Marcos Sender", 11.00 , 25, true, false));
 		books_list.add(new books("-comedi-", "la milla", "Pedro Alarcon", 30.50 , 8, true, false));
+		
 		
 		books_list.add(new books("-action-", "las Almas", "Tomas Turbao", 20.10 ,48, true, false));
 		books_list.add(new books("-action-", "el Bosque oscuro", "Aranceli Diaz", 99.99 , 1, true, false));
@@ -606,7 +620,9 @@ public class menu {
 	       
 	       }
 		
+		@SuppressWarnings("resource")
 		Scanner df1 = new Scanner(System.in);
+		@SuppressWarnings({ "unused", "resource" })
 		Scanner dt1 = new Scanner(System.in);
 		String user1_ = "",password1_ = "";
 		
@@ -619,90 +635,133 @@ public class menu {
 		if(user1_.equals(na1) && password1_.equals(pass1)) {
     
 	//------------------------------------------------------------------------------------------------------------------------------------
-
-			Scanner respuesta1=new Scanner(System.in);
-			int respuesta = 0;
+	
+			
+			
 			
 			try {
-			while(respuesta!=6) {
+			
+				inter.translate();
 				
+				int idioma = 0;
+				
+				 String g = "";
+			     String t = "";
+				
+				while(idioma != 4) {
+				
+				
+				@SuppressWarnings("resource")
+				Scanner sd = new Scanner(System.in);
 				System.out.println("");
 				System.out.println("");
+				System.out.println("seleccione su idioma");
 
-			System.out.println("\twelcome to the main menu: select one option :)");
-			
-					System.out.println(" -1- sing in");
-					System.out.println(" -2- search a book");
-					System.out.println(" -3- buy books"); 
-					System.out.println(" -4- satisfation survey"); 
-					System.out.println(" -5- cout dates"); 
-					System.out.println(" -6- sing out");
+				System.out.println("-1- Español");
+				System.out.println("-2- Francais");
+				System.out.println("-3- English");
+				System.out.println("-4- Aleman");
+				
+				idioma = sd.nextInt();
+				
+				if(idioma == 1) {
 					
-					System.out.println("select a option number");
-					respuesta = respuesta1.nextInt();
+					g = "es";
+					t = "ES";
+				}
+				if(idioma == 2) {
 					
-					menu j = new menu();
+					g = "fr";
+					t = "FR";
 					
-					switch(respuesta) {
-					case 1:
-						
-						j.sing_in();
-						break;
-						
-					case 2: 
-						
-						 j.search();
-						 break;
-			
-					case 3: 
-						
-						 j.buy_books();
-						break;
-					case 4:
-						
-						j.survey(args);
-						
-						break;
-					case 5:
-						
-						j.saldo(args);
-						
-						break;
-					case 6: 
-						System.out.println("\tthanks come back soon");
-						break;
+				}
+				if(idioma == 3) {
+					
+					g = "en";
+					t = "US";
+					
+				}
+                if(idioma == 4) {
+					
+					g = "al";
+					t = "AL";
+					
+				}
+				
+				if(idioma !=1 && idioma != 2 && idioma !=3 && idioma !=4) {
+					
+					System.out.println("Invalid option.");
+					
+				}
+				@SuppressWarnings("resource")
+				Scanner res1=new Scanner(System.in);
+				int res = 0;
+				
+				inter.setCountry(t);
+				inter.setLanguage(g);
+				
 
-					}
-					
-			}
+				inter.translate();
+				System.out.println("");
+				System.out.println("");
 			
-			}	catch (Exception e)	{
-				System.out.println("\tTHIS OPERATION IS UNVIABLE");
+				System.out.println("-1-" + inter.getSring1());
+		        System.out.println("-2-" + inter.getSring2());
+		        System.out.println("-3-" + inter.getSring3());
+		        System.out.println("-4-" + inter.getSring5());
+		        System.out.println("-5-" + inter.getSring6());
+				System.out.println("select one: ");
+				
+
+		        res = res1.nextInt();
+
+                 menu j = new menu();
+				
+				switch(res) {
+				case 1:
+					
+					j.sing_in();
+					break;
+					
+				case 2: 
+					
+					 j.search();
+					 break;
+		
+				case 3: 
+					
+					 j.buy_books();
+					break;
+				case 4:
+					
+					j.survey(args);
+					
+					break;
+				case 5:
+					
+					j.saldo(args);
+					
+					break;
+				case 6: 
+					System.out.println("\tthanks come back soon");
+					break;
+
+				}
+				
+				}
+
+				
+				}	catch (Exception e)	{
+					
+			System.out.println("\tTHIS OPERATION IS UNVIABLE");
 
 			}
 		}
-
-		
-		
-		
-		else {
-			System.out.println("------------------------------------");
-			System.out.println("Sorry you dont have acces");
-			System.out.println("------------------------------------");
-			System.out.println("");
-			
-
-		}
-		
-		
-		
+	
 	}
 		
 	
 	}
 	
 	
-
-	
-  
 
