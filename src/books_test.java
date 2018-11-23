@@ -5,27 +5,25 @@ import org.junit.Test;
 
 import store.books;
 
-//---------------------------costumer tests------------------------
+@SuppressWarnings("unused")
 public class books_test {
 
 	@SuppressWarnings("deprecation")
-	@Test
+	
 	public void test() {
-		/*
-		@SuppressWarnings("unused")
-		books Books = new books ("paco","pepe","luis",23.4 ,13,true,false);
-		assertEquals(books.getCategorie(),"paco");
-		assertEquals(books.getStock(),"pepe");
-		assertEquals(books.getCompra(),"luis");
-		assertEquals(books.getUnits(), 23.4);
-		assertEquals(books.getBook_name(),13);
-		assertEquals(books.getWriter(),true);
-		assertEquals(books.getCategorie(),false);
+		
+		books test = new books ("paco","pepe","luis",23.4 ,13,true,false);
+		assertEquals(test.getCategorie(),"paco");
+		assertEquals(test.getStock(),"pepe");
+		assertEquals(test.getCompra(),"luis");
+		assertEquals(test.getUnits(), 23.4);
+		assertEquals(test.getBook_name(),13);
+		assertEquals(test.getWriter(),true);
+		assertEquals(test.getCategorie(),false);
 	
 		fail("Not yet implemented");
 		
 		
-		*/
 	}
 
 }

@@ -43,18 +43,4 @@ public class cuentaProxy implements Icuenta {
 		}
 	}
 
-	@Override
-	public void mostrarSaldo(cuenta cuenta) {
-		LOGGER.info("------CUENTA PROXY---------MOSTRAR DINERO-----------");
-		if (cuentaReal==null) {
-			cuentaReal = new CuentaBancoAImpl();
-			cuentaReal.mostrarSaldo(cuenta);
-		}
-		else {
-			cuentaReal.mostrarSaldo(cuenta);
-
-		}
-		
-	}
-
 }

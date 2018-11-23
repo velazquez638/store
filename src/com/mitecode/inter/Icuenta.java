@@ -5,6 +5,6 @@ public interface Icuenta {
 
 	cuenta retirarDinero(cuenta cuenta, double monto);
 	cuenta depositarDinero(cuenta cuenta, double monto);
-	void mostrarSaldo(cuenta cuenta);
+
 
 }

@@ -3,13 +3,13 @@ package store;
 public class books {
 
   
-	 String categorie = " ";
-     String book_name = " ";
-     String writer = " ";
-     double price;
-     int units;
-      boolean stock;
-      boolean compra;
+	 protected String categorie = " ";
+     protected String book_name = " ";
+     protected String writer = " ";
+     protected double price;
+     protected int units;
+     protected boolean stock;
+     protected boolean compra;
 
 	public books(String _categorie, String _book_name, String _writer, double _price, int _units, boolean stock, boolean compra) {
 		categorie = _categorie;

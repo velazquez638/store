@@ -21,8 +21,7 @@ public class CuentaBancoAImpl implements Icuenta {
 		return cuenta;
 	}
 
-	public void mostrarSaldo(cuenta cuenta) {
-		System.out.println("Saldo actual: " + cuenta.getSaldoInicial());
-	}
+
+	
 
 }

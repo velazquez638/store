@@ -480,6 +480,7 @@ public class menu {
 
 				break;
 			case 4:
+				
 				break;
 		
 		}
@@ -503,10 +504,12 @@ public class menu {
 				System.out.println("--------------- welcome to de survey:-----------------------");
 				System.out.println("");
 				System.out.println("select a option number");
+				System.out.println("");
 				System.out.println("-1- i´m disappointed");
 				System.out.println("-2- i think there are wrong thins");
 				System.out.println("-3- i´m satisfied");
 				System.out.println("-4- come back to the main menu");
+				System.out.println("");
 				System.out.println("-----------------------------------------------------------");
 
 
@@ -530,8 +533,7 @@ public class menu {
 
 				break;
 			case 4:
-				
-		break;
+				break;
 			
 
 			}
@@ -541,13 +543,18 @@ public class menu {
 		
 		public static void saldo(String[] args) {
 			
-			cuenta c = new cuenta (1020345, "user_name1", 1000);
-			
+			cuenta c = new cuenta (1020345, "Sergio", 1000);
+			System.out.println("datos desde su ultimo ingreso:");
+			System.out.println("");
+
+			System.out.println("Costumer ID: " + cuenta.IDusuario);
+			System.out.println("User name: " + cuenta.usuario);
+
 			Icuenta cuentaProxy = new cuentaProxy(new CuentaBancoAImpl());
-		    cuentaProxy.mostrarSaldo(c);
+		
 			c=cuentaProxy.depositarDinero(c,500);
 			c=cuentaProxy.retirarDinero(c,20);
-			cuentaProxy.mostrarSaldo(c);
+		
 
 		}
 		
@@ -582,11 +589,11 @@ public class menu {
 		books_list.add(new books("-comedi-", "la milla", "Pedro Alarcon", 30.50 , 8, true, false));
 		
 		
-		books_list.add(new books("-action-", "las Almas", "Tomas Turbao", 20.10 ,48, true, false));
-		books_list.add(new books("-action-", "el Bosque oscuro", "Aranceli Diaz", 99.99 , 1, true, false));
-		books_list.add(new books("-action-", "las Calles", "Sergio Perez", 25.45 , 4, true, false));
-		books_list.add(new books("-action-", "el Camino", "Martin Lutero", 15.00 , 9, true, false));
-		books_list.add(new books("-action-", "la Carretera", "Velax Turbo", 40.50 , 20, true, false));
+		books_list.add(new books("-action-", "el aniquilador", "Tomas Turbao", 20.10 ,48, true, false));
+		books_list.add(new books("-action-", "oscuro", "Aranceli Diaz", 99.99 , 1, true, false));
+		books_list.add(new books("-action-", "Calles vacias", "Sergio Perez", 25.45 , 4, true, false));
+		books_list.add(new books("-action-", "el senador", "Martin Lutero", 15.00 , 9, true, false));
+		books_list.add(new books("-action-", "la momia", "Velax Turbo", 40.50 , 20, true, false));
 		
 		
 		System.out.println("\twelcome to the velax's store ");
@@ -639,20 +646,20 @@ public class menu {
 			
 			
 			
-			try {
+	    	try {
 			
 				inter.translate();
 				
 				int idioma = 0;
 				
-				 String g = "";
-			     String t = "";
+				 String i = "";
+			     String r = "";
 				
 				while(idioma != 4) {
 				
 				
 				@SuppressWarnings("resource")
-				Scanner sd = new Scanner(System.in);
+				Scanner idi = new Scanner(System.in);
 				System.out.println("");
 				System.out.println("");
 				System.out.println("seleccione su idioma");
@@ -662,54 +669,60 @@ public class menu {
 				System.out.println("-3- English");
 				System.out.println("-4- Aleman");
 				
-				idioma = sd.nextInt();
+				idioma = idi.nextInt();
 				
 				if(idioma == 1) {
 					
-					g = "es";
-					t = "ES";
+					i = "es";
+					r = "ES";
 				}
 				if(idioma == 2) {
 					
-					g = "fr";
-					t = "FR";
+					i = "fr";
+					r = "FR";
 					
 				}
 				if(idioma == 3) {
 					
-					g = "en";
-					t = "US";
+					i = "in";
+					r = "IN";
 					
 				}
                 if(idioma == 4) {
 					
-					g = "al";
-					t = "AL";
+					i = "al";
+					r = "AL";
 					
 				}
+          
+				
 				
 				if(idioma !=1 && idioma != 2 && idioma !=3 && idioma !=4) {
 					
 					System.out.println("Invalid option.");
+					break;
 					
 				}
 				@SuppressWarnings("resource")
 				Scanner res1=new Scanner(System.in);
 				int res = 0;
 				
-				inter.setCountry(t);
-				inter.setLanguage(g);
+				inter.setCountry(i);
+				inter.setLanguage(r);
 				
 
 				inter.translate();
 				System.out.println("");
 				System.out.println("");
-			
+				System.out.println("\twelcome to the velax´s shop");
+				System.out.println("");
+
 				System.out.println("-1-" + inter.getSring1());
 		        System.out.println("-2-" + inter.getSring2());
 		        System.out.println("-3-" + inter.getSring3());
-		        System.out.println("-4-" + inter.getSring5());
-		        System.out.println("-5-" + inter.getSring6());
+		        System.out.println("-4-" + inter.getSring4());	
+		        System.out.println("-5-" + inter.getSring5());
+		        System.out.println("-6-" + inter.getSring6());
 				System.out.println("select one: ");
 				
 
@@ -753,9 +766,17 @@ public class menu {
 				
 				}	catch (Exception e)	{
 					
-			System.out.println("\tTHIS OPERATION IS UNVIABLE");
+		      System.out.println("\tTHIS OPERATION IS UNVIABLE");
 
 			}
+			
+		} else {
+			
+			System.out.println("\t----------------------------");
+			System.out.println("\t|   YOU DON´T HAVE ACESS   |");
+			System.out.println("\t----------------------------");
+
+
 		}
 	
 	}
