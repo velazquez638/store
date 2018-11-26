@@ -125,11 +125,16 @@ For the main menu we have use a “try catch” for the exceptions control.
 
 In the code we use two designe patterns Singleton and proxy.
 
+We use the proxy to show dates count:
+
 
 
 
 
 ![](pictures/picture.PNG)
+
+
+We use Singleton to made the sorvey
 
 
 
