@@ -3,7 +3,7 @@ For this practice, we have made the management of an online store menu. For this
 In the main class, we found the body of the program which implemented it with a switch which it call's various functions.
  Functions:
  
- ´´´java
+ 
  
 		try {
 			while(respuesta!=4) {
@@ -40,7 +40,7 @@ In the main class, we found the body of the program which implemented it with a 
 		} catch (Exception e){
 			System.out.println("\tTHIS OPERATION IS UNVIABLE");
 		}
- ´´´
+ 
  
  ![](pictures/1.PNG)
  
@@ -64,7 +64,7 @@ Another feature to be highlighted in the program is the use of files, our progra
 
 
 
-´´´
+
 
 	String j = "\r\n";
 	String s = "";
@@ -95,6 +95,6 @@ Another feature to be highlighted in the program is the use of files, our progra
 
 		e.printStackTrace();
 	}
-´´´
+
 
 For the main menu we have use a “try catch” for the exceptions control.
