@@ -76,7 +76,7 @@ Another feature to be highlighted in the program is the use of files, our progra
 ![](pictures/3.PNG)
 
 
-![](pictures/4.PNG)
+
 
 
 
