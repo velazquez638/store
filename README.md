@@ -121,3 +121,22 @@ Another feature to be highlighted in the program is the use of files, our progra
 
 For the main menu we have use a “try catch” for the exceptions control.
 
+
+
+In the code we use two designe patterns Singleton and proxy.
+
+
+
+
+
+![](pictures/picture.PNG)
+
+
+
+
+
+
+
+
+![](pictures/picture2.PNG)
+
