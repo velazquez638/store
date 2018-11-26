@@ -62,7 +62,7 @@ In the main class, we found the body of the program which implemented it with a 
  
  
  
-1.      Sing_in, this first option register new users and administrator can view the list of users.
+1.       Sing_in, this first option register new users and administrator can view the list of users.
 
 
 
