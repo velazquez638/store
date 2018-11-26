@@ -1,6 +1,4 @@
-# store
-
-
+# Store
 For this practice, we have made the management of an online store menu. For this program, we have used a master class (menu) and two secondary (costumer and books).
 In the main class, we found the body of the program which implemented it with a switch which it call's various functions.
  Functions:
@@ -9,44 +7,38 @@ In the main class, we found the body of the program which implemented it with a 
  try {
 	while(respuesta!=4) {
 	System.out.println("\twelcome to the main menu: select one option :)");
+		System.out.println(" -1- sing in");
+		System.out.println(" -2- search a book");
+		System.out.println(" -3- buy books"); 
+		System.out.println(" -4- sing out");
 
-			System.out.println(" -1- sing in");
-			System.out.println(" -2- search a book");
-			System.out.println(" -3- buy books"); 
-			System.out.println(" -4- sing out");
+		System.out.println("select a option number");
+		respuesta = respuesta1.nextInt();
 
-			System.out.println("select a option number");
-			respuesta = respuesta1.nextInt();
+		menu j = new menu();
 
-			menu j = new menu();
+		switch(respuesta) {
+		case 1:
+			j.sing_in();
+			break;
+			
+		case 2: 
+			j.search();
+			break;
+			
+		case 3: 
+			j.buy_books();
+			break;
+			
+		case 4: 
+			System.out.println("\tthanks come back soon");
+			break;
+			
+		}
 
-			switch(respuesta) {
-			case 1:
-
-				j.sing_in();
-				break;
-
-			case 2: 
-
-				 j.search();
-				 break;
-
-			case 3: 
-
-				 j.buy_books();
-				break;
-			case 4: 
-				System.out.println("\tthanks come back soon");
-				break;
-
-			}
-
-	}
-
-	}	catch (Exception e)	{
-		System.out.println("\tTHIS OPERATION IS UNVIABLE");
-
-	}
+} catch (Exception e){
+	System.out.println("\tTHIS OPERATION IS UNVIABLE");
+}
  ´´´
  
  ![](pictures/1.PNG)
@@ -72,7 +64,6 @@ Another feature to be highlighted in the program is the use of files, our progra
 
 
 ´´´
-		
 		String j = "\r\n";
 		String s = "";
 		String a = "";
@@ -80,33 +71,27 @@ try {
 
 	//we define the place of the file in our pc
 
-			File f = new File("C:\\Users\\alvar\\Desktop/users.txt");
+	File f = new File("C:\\Users\\alvar\\Desktop/users.txt");
 
+	if(f.exists()) {
+		f.delete();
+		f.createNewFile();
+	}
 
-			if(f.exists()) {
+	FileWriter f2 = new FileWriter(f, true);
 
-				f.delete();
-				f.createNewFile();
+	for(int i = 0;i<costumer_list.size();i++) {
+		f2.write("name :" + costumer_list.get(i).getName() + " || user name :" + costumer_list.get(i).getUser_name()+" || email :" + costumer_list.get(i).getEmail() );
+		f2.write(s);
+		f2.write(j);
+		f2.write(a);
+	}
+	f2.close();
 
-			}
+} catch (IOException e) {
 
-			FileWriter f2 = new FileWriter(f, true);
-
-			for(int i = 0;i<costumer_list.size();i++) {
-
-
-
-				f2.write("name :" + costumer_list.get(i).getName() + " || user name :" +       costumer_list.get(i).getUser_name()+" || email :" + costumer_list.get(i).getEmail() );
-				f2.write(s);
-				f2.write(j);
-				f2.write(a);
-			}
-			f2.close();
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
+	e.printStackTrace();
+}
 ´´´
 
 
